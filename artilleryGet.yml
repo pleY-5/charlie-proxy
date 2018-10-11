@@ -1,0 +1,19 @@
+config:
+  target: "http://localhost:8080"
+  phases:
+    - duration: 60
+      arrivalRate: 250
+  # payload:
+  #   path: "reviewId.csv"
+  #   fields:
+  #     - "restaurant_id"
+scenarios:
+  - flow:
+    - get:
+        url: "/api/reviews/{{$randomNumber(1, 2000000)}}"
+    weight: 8
+
+  - flow:
+    - get:
+        url: "/api/reviews/{{$randomNumber(2000001, 10000000)}}"
+    weight: 2
