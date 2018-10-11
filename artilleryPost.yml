@@ -1,0 +1,45 @@
+config:
+  target: "http://localhost:8080"
+  phases:
+    - duration: 60
+      arrivalRate: 200
+  payload:
+    path: "review50.csv"
+    fields:
+      - "restaurantId"
+      - "restaurant_name"
+      - "user_id"
+      - "date"
+      - "count_star_ratings"
+      - "count_checkin"
+      - "ratings"
+      - "useful_count"
+      - "funny_count"
+      - "cool_count"
+      - "reviews_count"
+      - "useful_clicked"
+      - "funny_clicked"
+      - "cool_clicked"
+      - "review"
+scenarios:
+  - flow:
+      - post:
+          url: "/api/reviews"
+          json:
+            restaurantId: "{{ restaurantId }}"
+            name: "{{ restaurant_name }}"
+            user_id: "{{ user_id }}"
+            date: "{{ date }}"
+            count_starRatings: "{{ count_star_ratings }}"
+            count_checkin: "{{ count_checkin }}"
+            ratings: "{{ ratings }}"
+            useful_count: "{{ useful_count }}"
+            funny_count: "{{ funny_count }}"
+            cool_count: "{{ cool_count }}"
+            reviewsCount: "{{ reviews_count }}"
+            useful_clicked: "{{ useful_clicked }}"
+            funny_clicked: "{{ funny_clicked }}"
+            cool_clicked: "{{ cool_clicked }}"
+            text_review: "{{ review }}"
+
+

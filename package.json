@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js"
+    "start": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,12 @@
   "homepage": "https://github.com/yelpreactor/eddie-proxy#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cluster": "^0.7.7",
     "compression": "^1.7.3",
     "express": "^4.16.3",
     "express-http-proxy": "^1.4.0",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "newrelic": "^4.9.0",
+    "os": "^0.1.1"
   }
 }
