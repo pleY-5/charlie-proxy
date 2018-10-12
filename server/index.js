@@ -5,12 +5,13 @@ const proxy = require('express-http-proxy');
 const bodyParser = require('body-parser');
 const compression = require('compression');
 const morgan = require('morgan');
+const path = require('path');
 
 app.use(bodyParser.json());
 app.use(compression());
 
-app.use('/loaderio-5c39b39d366134a4c8ab4bf3c6e623a0', (req, res) => {
-  res.send('loaderio-5c39b39d366134a4c8ab4bf3c6e623a0');
+app.use('/loaderio-b946553f80839298d4edc7110d658ebc.txt', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public', 'loaderio-b946553f80839298d4edc7110d658ebc.txt'));
 });
 
 app.use('/:id', express.static('public'));
