@@ -6,11 +6,10 @@ const bodyParser = require('body-parser');
 const compression = require('compression');
 const morgan = require('morgan');
 
-
 app.use(bodyParser.json());
 app.use(compression());
 
-app.get('/loaderio-5c39b39d366134a4c8ab4bf3c6e623a0', (req, res) => {
+app.use('/loaderio-5c39b39d366134a4c8ab4bf3c6e623a0', (req, res) => {
   res.send('loaderio-5c39b39d366134a4c8ab4bf3c6e623a0');
 });
 
